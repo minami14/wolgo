@@ -1,0 +1,2 @@
+# wolgo
+Wake on LAN
