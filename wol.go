@@ -2,7 +2,7 @@ package wolgo
 
 import "net"
 
-// WakeOnLAN turns on the computer with specific mac address by a network message.
+// WakeOnLan turns on the computer with specific mac address by a network message.
 func WakeOnLan(mac string) error {
 	addr, err := net.ParseMAC(mac)
 	if err != nil {
