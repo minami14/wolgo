@@ -1,6 +1,7 @@
-package wolgo
+package wol
 
 import (
+	"bytes"
 	"log"
 	"net"
 	"testing"
@@ -45,7 +46,7 @@ func TestWakeOnLan(t *testing.T) {
 		t.Error(err)
 	}
 
-	if string(packet) != string(buf) {
+	if !bytes.Equal(packet, buf) {
 		t.Errorf("%v %v", packet, buf)
 	}
 }

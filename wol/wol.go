@@ -1,4 +1,4 @@
-package wolgo
+package wol
 
 import "net"
 
