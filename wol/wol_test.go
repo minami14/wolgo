@@ -1,6 +1,9 @@
-package wolgo
+// +build test
+
+package wol
 
 import (
+	"bytes"
 	"log"
 	"net"
 	"testing"
@@ -31,7 +34,7 @@ func TestWakeOnLan(t *testing.T) {
 		}
 	}()
 
-	conn, err := net.ListenPacket("udp", ":7")
+	conn, err := net.ListenPacket("udp", ":7777")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -45,7 +48,7 @@ func TestWakeOnLan(t *testing.T) {
 		t.Error(err)
 	}
 
-	if string(packet) != string(buf) {
+	if !bytes.Equal(packet, buf) {
 		t.Errorf("%v %v", packet, buf)
 	}
 }

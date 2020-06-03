@@ -1,5 +1,5 @@
 module github.com/minami14/wolgo
 
-go 1.12
+go 1.14
 
-require github.com/urfave/cli v1.20.0
+require github.com/urfave/cli v1.22.4

@@ -5,20 +5,20 @@ import (
 	"log"
 	"os"
 
-	"github.com/minami14/wolgo"
+	"github.com/minami14/wolgo/wol"
 
 	"github.com/urfave/cli"
 )
 
 func main() {
 	app := cli.NewApp()
-	app.Name = "wolgo cli"
+	app.Name = "wolgo"
 	app.Usage = "./cli [target mac address]"
 	app.Action = func(c *cli.Context) error {
 		if !c.Args().Present() {
 			return errors.New("wolgo requires 1 argument. it is mac address")
 		}
-		err := wolgo.WakeOnLan(c.Args().Get(0))
+		err := wol.WakeOnLan(c.Args().Get(0))
 		return err
 	}
 
