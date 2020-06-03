@@ -1,3 +1,5 @@
+// +build test
+
 package wol
 
 import (
@@ -32,7 +34,7 @@ func TestWakeOnLan(t *testing.T) {
 		}
 	}()
 
-	conn, err := net.ListenPacket("udp", ":7")
+	conn, err := net.ListenPacket("udp", ":7777")
 	if err != nil {
 		t.Fatal(err)
 	}

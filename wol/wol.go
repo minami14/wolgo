@@ -18,7 +18,7 @@ func WakeOnLan(mac string) error {
 		packet = append(packet, addr...)
 	}
 
-	conn, err := net.Dial("udp", "255.255.255.255:7")
+	conn, err := net.Dial("udp", address)
 	if err != nil {
 		return err
 	}
