@@ -24,7 +24,7 @@ jobs:
         with:
           platforms: 'linux/amd64, darwin/amd64, windows/amd64'
           package: ''
-          name: 'jenkins_consecutive_fail_detector'
+          name: 'wolgo'
           compress: false
           dest: 'dist'
 
