@@ -2,6 +2,7 @@ package main
 
 import (
 	"errors"
+	"fmt"
 	"log"
 	"os"
 
@@ -13,7 +14,8 @@ import (
 func main() {
 	app := cli.NewApp()
 	app.Name = "wolgo"
-	app.Usage = "./cli [target mac address]"
+	app.Usage = "Wake on LAN"
+	app.UsageText = fmt.Sprintf("%v [target mac address]", os.Args[0])
 	app.Action = func(c *cli.Context) error {
 		if !c.Args().Present() {
 			return errors.New("wolgo requires 1 argument. it is mac address")
@@ -22,9 +24,7 @@ func main() {
 		return err
 	}
 
-	err := app.Run(os.Args)
-	if err != nil {
+	if err := app.Run(os.Args); err != nil {
 		log.Fatal(err)
 	}
-
 }
