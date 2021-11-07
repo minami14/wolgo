@@ -14,7 +14,7 @@ wolgo ff:ff:ff:ff:ff:ff
 ## Installation
 
 ```bash
-go get github.com/minami14/wolgo
+go install github.com/minami14/wolgo@latest
 ```
 
 
